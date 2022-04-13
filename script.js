@@ -129,4 +129,24 @@ function displayQuestion(question, number){
     document.getElementById('answer4').innerText = question['options'][3];
 }
 
+// function for get next question and display correct and incorrect score
+function getNextQuestion(){
+    if (questionNumber < 10){
+        questionNumber = questionNumber + 1;
+        questionIndex = questionIndex + 1;  
+        displayQuestion(shuffleQuestions[questionIndex], questionNumber);
+    }
+    else {
+        finishQuiz();
+    }
+}
+
+function displayScore(){
+    document.getElementById("point").innerText = score; 
+}
+
+function displayIncorrectScore(){
+    document.getElementById("fail-point").innerText = incorrectScore; 
+}
+
 
