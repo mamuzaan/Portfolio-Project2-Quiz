@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,600&family=DM+Serif+Display&family=Merriweather&family=Source+Serif+Pro&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Serif Pro', serif;
+    outline: none;
+}
+
