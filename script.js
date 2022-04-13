@@ -119,4 +119,14 @@ function resetQuiz(){
     mainBox.classList.remove('hide-content');
 }
 
+//Display question function
+function displayQuestion(question, number){
+    document.getElementById('question-content').innerText = question['question'];
+    document.getElementById('question-num').innerText = number;
+    document.getElementById('answer1').innerText = question['options'][0];
+    document.getElementById('answer2').innerText = question['options'][1];
+    document.getElementById('answer3').innerText = question['options'][2];
+    document.getElementById('answer4').innerText = question['options'][3];
+}
+
 
