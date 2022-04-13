@@ -102,3 +102,13 @@ h1{
     background-color: rgb(78, 78, 218);
 }
 
+/* Apply style to user name div */
+#user-name{
+    background-color: rgb(213, 232, 236);
+    width: 100%;
+    border: none;
+    height: 2.5em;
+    border-radius: 15px;
+    padding-left: 1em;
+}
+
