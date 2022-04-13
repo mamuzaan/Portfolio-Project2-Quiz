@@ -184,12 +184,12 @@ function finishQuiz (){
         document.getElementById("com1").innerHTML = textToHighlight;
     }
     else if (score >= 6) {
-        console.log('6-8');
+        console.log('5-7');
         var textToHighlight = '<span style="color:orange"> Average not bad ' + userName + ', but you have to learn more. </span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
     else {
-        console.log('0-5');
+        console.log('0-4');
         var textToHighlight = '<span style="color:red"> Sorry ' + userName + ', go to wikipedia and practise and try again. </span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
