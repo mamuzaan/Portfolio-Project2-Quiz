@@ -104,4 +104,19 @@ function startQuiz(){
     }
 }
 
+//quiz function reset
+function resetQuiz(){
+    shuffleQuestions = [];
+    questionNumber = 1;
+    questionIndex = 0;
+    score = 0;
+    userName = "";
+    incorrectScore = 0;
+    document.getElementById('result-contain').classList.add('hide-content');
+    document.getElementById('user-name').value = "";
+    displayScore();
+    displayIncorrectScore();
+    mainBox.classList.remove('hide-content');
+}
+
 
