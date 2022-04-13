@@ -67,3 +67,19 @@ startButton.addEventListener('click', startQuiz);
 document.querySelectorAll('.answer')
       .forEach(button => button.addEventListener('click', validateAnswer));
 document.getElementById('try-again').addEventListener('click', resetQuiz);
+
+// Quiz function start here
+
+function shuffleQuestionsArray(array) {
+    var currentIndex = array.length,  randomIndex;
+    while (0 !== currentIndex) {
+      // Remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+}
+
