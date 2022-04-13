@@ -68,7 +68,7 @@ document.querySelectorAll('.answer')
       .forEach(button => button.addEventListener('click', validateAnswer));
 document.getElementById('try-again').addEventListener('click', resetQuiz);
 
-// Quiz function start here
+// Quiz function here
 
 function shuffleQuestionsArray(array) {
     var currentIndex = array.length,  randomIndex;
@@ -89,4 +89,19 @@ function getUserName() {
     userNameBox.classList.remove('hide-content')
     document.getElementById('question-box').classList.add('hide-content');
 }
+
+//quiz function start here
+function startQuiz(){
+    userName = document.getElementById('user-name').value;
+    console.log("userName: " + userName);
+    if(userName.length >= 1) {
+        mainBox.classList.add('hide-content');
+        userNameBox.classList.add('hide-content')
+        document.getElementById('question-box').classList.remove('hide-content');
+        console.log('userName ' + userName);
+        shuffleQuestions = shuffleQuestionsArray(quiz);
+        displayQuestion(shuffleQuestions[questionIndex], questionNumber);
+    }
+}
+
 
