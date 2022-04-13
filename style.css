@@ -31,3 +31,74 @@ h1{
     text-align: center;
 }
 
+/* Apply style to custom box */
+.cust-box{
+    width:650px;
+    background-color: lightsteelblue;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.cust-box::before,
+.cust-box::after{
+    clear:both;
+    display: table;
+}
+
+.cust-box.hide{
+    display:none;
+}
+
+/* Apply style to main box and button */
+.main-box h2{
+    font-weight: 600;
+    line-height: 2em;
+}
+
+.main-box p{
+    font-size: large;
+    margin-bottom: 1em;
+    line-height: 2em;
+    font-weight: 400;
+}
+
+.main-box p span{
+    font-weight: 600;
+}
+
+.main-box .btn{
+    margin-top: 1.5em;
+}
+
+.btn{
+    padding: 12px;
+    background-color: blue;
+    color: aliceblue;
+    border: none;
+    font-size: large;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.button-inline{
+    padding: 12px;
+    background-color: blue;
+    color: aliceblue;
+    border: none;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.btn:hover{
+    background-color: rgb(78, 78, 218);
+}
+
