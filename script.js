@@ -83,3 +83,10 @@ function shuffleQuestionsArray(array) {
     return array;
 }
 
+//take user name
+function getUserName() {
+    mainBox.classList.add('hide-content');
+    userNameBox.classList.remove('hide-content')
+    document.getElementById('question-box').classList.add('hide-content');
+}
+
