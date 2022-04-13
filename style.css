@@ -112,3 +112,38 @@ h1{
     padding-left: 1em;
 }
 
+/* Apply style to question area like quiz-content, option-box, answer-direction button */
+.quiz-content .question-content{
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 2em 0;
+    margin: 0;
+}
+
+.quiz-content .option-box{
+    padding: 1em;
+    font-size: 2em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.quiz-content .btn{
+    margin: 1.5em 0;
+}
+
+.quiz-content .answer-direction div{
+    display: flex;
+    height: 2.5em;
+    width: 2.5em;
+    margin: 10px 4px 0 0;
+}
+
+.quiz-content .point-area{
+    padding-top: 1em;
+}
+
+.quiz-content .point-area .fail{
+    float: right;
+}
+
