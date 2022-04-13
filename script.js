@@ -51,3 +51,9 @@ let quiz = [
     }
 ]
 
+let shuffleQuestions = [];
+let questionNumber = 1;
+let questionIndex = 0;
+let score = 0;
+let incorrectScore = 0;
+let userName = "";
