@@ -147,3 +147,48 @@ h1{
     float: right;
 }
 
+/* Add style to score result-content and table */
+.points{
+    display: flex;
+    float: left;
+}
+
+.fail{
+    float: right;
+}
+
+.result-contain{
+    text-align: center;
+}
+
+.result-contain hide{
+    display: none;
+}
+
+.result-contain h1{
+    font-size: 2em;
+    line-height: 1em;
+}
+
+.result-contain table{
+    width: 100%;
+    margin: 2em 0;
+}
+
+.result-contain table td .result-contain table th{
+    border: 1px solid #aaa;
+    padding: 1em 2em;
+    font-weight: 500;
+    width: 50%;
+    text-align: left;
+    font-size: 2em;
+}
+
+.result-contain .btn{
+    margin: 2em 2em 0 0;
+}
+
+.results{
+    text-align: left;
+}
+
