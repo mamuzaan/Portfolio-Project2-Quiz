@@ -202,3 +202,55 @@ h1{
     padding: 6px;
 }
 
+/* Apply style to @media screen for mobile device */
+@media screen and (max-width: 480px){
+    #main-box{
+        width:100%;
+    }
+    .main-box h2{
+        font-weight: 800;
+        line-height: 1em;
+        font-size: 18px;
+        color: rgb(3, 55, 3);
+    }
+    
+    .main-box p{
+        font-size: medium;
+        margin-bottom: 1em;
+        line-height: 1em;
+        font-weight: 400;
+    }
+
+    .result-contain{
+        text-align: center;
+    }
+
+    .result-contain h1{
+        font-size: 2em;
+        line-height: 1em;
+    }
+    
+    .result-contain table{
+        width: 100%;
+        margin: 6px 0;
+    }
+    
+    .result-contain table td .result-contain table th{
+        border: 1px solid #aaa;
+        padding: 1em 1em;
+        font-weight: 500;
+        width: 50%;
+        text-align: left;
+        font-size: 1em;
+    }
+    
+    .result-contain .btn{
+        margin: 2em 2em 0 0;
+    }
+
+    .com{
+        font-size: 1em;
+        text-align: left;
+        padding: 6px;
+    }
+}
