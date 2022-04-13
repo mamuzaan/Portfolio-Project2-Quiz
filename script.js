@@ -170,4 +170,27 @@ function validateAnswer(event){
     getNextQuestion();
 }
 
+// Finish quiz function here
+function finishQuiz (){
+    questionHolder.classList.add('hide-content');
+    document.getElementById('result-contain').classList.remove('hide-content');
+    document.getElementById('total-q').innerText = 10;
+    document.getElementById('total-right').innerText = score;
+    document.getElementById('total-fail').innerText = incorrectScore;
 
+    if (score >= 8) {
+        console.log('8-10');
+        var textToHighlight = '<span style="color:green"> 8-10: Well done! you have good general knowledge.</span>';
+        document.getElementById("com1").innerHTML = textToHighlight;
+    }
+    else if (score >= 6) {
+        console.log('6-8');
+        var textToHighlight = '<span style="color:yellowgreen"> 5-7: Average: not bad but you have to learn more. </span>';
+        document.getElementById("com1").innerHTML = textToHighlight;
+    }
+    else {
+        console.log('0-5');
+        var textToHighlight = '<span style="color:red"> 0-4: Sorry ' + userName + ', go to wikipedia and prectice and try again. </span>';
+        document.getElementById("com1").innerHTML = textToHighlight;
+    }
+}
