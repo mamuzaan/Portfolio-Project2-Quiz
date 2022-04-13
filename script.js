@@ -57,3 +57,13 @@ let questionIndex = 0;
 let score = 0;
 let incorrectScore = 0;
 let userName = "";
+let usernameButton = document.getElementById("username-button");
+let startButton = document.getElementById("start-button");
+let mainBox = document.getElementById("main-box");
+let userNameBox = document.getElementById("user-name-box");
+let questionHolder = document.getElementById("question-box");
+usernameButton.addEventListener('click', getUserName);
+startButton.addEventListener('click', startQuiz);
+document.querySelectorAll('.answer')
+      .forEach(button => button.addEventListener('click', validateAnswer));
+document.getElementById('try-again').addEventListener('click', resetQuiz);
