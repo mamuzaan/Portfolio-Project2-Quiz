@@ -28,10 +28,26 @@
         <button id="start-button" class="button-inline">Lets Start</button>
     </div>
 
+    <!--Create Question box div and in the div (Question number, option, answer direction, Point area div)-->
     <div id="question-box" class="cust-box quiz-contain hide-content">
         <div id="question-num" class="question-num"></div><br>
 
         <div id="question-content" class="question-content"></div><br>
+
+        <div id="option-box" class="option-box">
+            <button type="button" class="btn answer" name="answer" id="answer1"></button>
+            <button type="button" class="btn answer" name="answer" id="answer2"></button>
+            <button type="button" class="btn answer" name="answer" id="answer3"></button>
+            <button type="button" class="btn answer" name="answer" id="answer4"></button>
+        </div><br>
+
+        <div class="ans-direction"></div><br>
+        <hr>
+
+        <div class="point-area">
+            <p class="points">Right Answers: <span id="point"> 0</span></p>
+            <p class="points fail">Wrong Answers: <span id="fail-point"> 0</span></p>
+        </div>
     </div>
 
 
