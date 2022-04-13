@@ -49,7 +49,7 @@ let quiz = [
         options: ["The Cardigans", "Soundtrack of Lives", "The Hives", "Cesars"],
         answer: 2
     }
-]
+];
 
 let shuffleQuestions = [];
 let questionNumber = 1;
@@ -86,7 +86,7 @@ function shuffleQuestionsArray(array) {
 //take user name
 function getUserName() {
     mainBox.classList.add('hide-content');
-    userNameBox.classList.remove('hide-content')
+    userNameBox.classList.remove('hide-content');
     document.getElementById('question-box').classList.add('hide-content');
 }
 
@@ -96,7 +96,7 @@ function startQuiz(){
     console.log("userName: " + userName);
     if(userName.length >= 1) {
         mainBox.classList.add('hide-content');
-        userNameBox.classList.add('hide-content')
+        userNameBox.classList.add('hide-content');
         document.getElementById('question-box').classList.remove('hide-content');
         console.log('userName ' + userName);
         shuffleQuestions = shuffleQuestionsArray(quiz);
@@ -180,17 +180,17 @@ function finishQuiz (){
 
     if (score >= 8) {
         console.log('8-10');
-        var textToHighlight = '<span style="color:green"> 8-10: Well done! you have good general knowledge.</span>';
+        var textToHighlight = '<span style="color:green"> Well done! ' + userName + ', you have good general knowledge.</span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
     else if (score >= 6) {
         console.log('6-8');
-        var textToHighlight = '<span style="color:yellowgreen"> 5-7: Average: not bad but you have to learn more. </span>';
+        var textToHighlight = '<span style="color:orange"> Average not bad ' + userName + ', but you have to learn more. </span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
     else {
         console.log('0-5');
-        var textToHighlight = '<span style="color:red"> 0-4: Sorry ' + userName + ', go to wikipedia and prectice and try again. </span>';
+        var textToHighlight = '<span style="color:red"> Sorry ' + userName + ', go to wikipedia and practise and try again. </span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
 }
