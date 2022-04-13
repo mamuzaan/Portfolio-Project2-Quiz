@@ -149,4 +149,25 @@ function displayIncorrectScore(){
     document.getElementById("fail-point").innerText = incorrectScore; 
 }
 
+// Function for answer validation
+function validateAnswer(event){
+    console.log('I clicked ', event.target.innerText);
+    const selectedAnswerText = event.target.innerText;
+    const currentQuestion = shuffleQuestions[questionIndex];
+    const correctAnswerIndex = currentQuestion.answer;
+    const correctAnswerText = currentQuestion.options[correctAnswerIndex];
+    console.log(selectedAnswerText, correctAnswerText);
+    if (correctAnswerText.localeCompare(selectedAnswerText) === 0){
+        score = score + 1;
+        console.log('Correct Answer');
+        displayScore();
+    }
+    else{
+        console.log('Incorrect Answer');
+        incorrectScore = incorrectScore + 1;
+        displayIncorrectScore();
+    }
+    getNextQuestion();
+}
+
 
