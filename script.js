@@ -61,7 +61,7 @@ var startButton = document.getElementById("start-button");
 var mainBox = document.getElementById("main-box");
 var userNameBox = document.getElementById("user-name-box");
 var questionHolder = document.getElementById("question-box");
-var userNameValidation = document.getElementById('user-name-validation-msg')
+var userNameValidation = document.getElementById('user-name-validation-msg');
 usernameButton.addEventListener('click', getUserName);
 startButton.addEventListener('click', startQuiz);
 document.querySelectorAll('.answer')
@@ -85,9 +85,9 @@ function startQuiz(){
         mainBox.classList.add('hide-content');
         userNameBox.classList.add('hide-content');
         document.getElementById('question-box').classList.remove('hide-content');
-        displayQuestion(shuffleQuestions[questionIndex], questionNumber);
+        displayQuestion(quiz[questionIndex], questionNumber);
     } else {
-        userNameValidation.innerHTML = '<span style="color:red"> Please enter user name.</span>'
+        userNameValidation.innerHTML = '<span style="color:red"> Please enter user name.</span>';
     }
 }
 
@@ -139,7 +139,7 @@ function displayIncorrectScore(){
 // Function for answer validation
 function validateAnswer(event){
     var selectedAnswerText = event.target.innerText;
-    var currentQuestion = shuffleQuestions[questionIndex];
+    var currentQuestion = quiz[questionIndex];
     var correctAnswerIndex = currentQuestion.answer;
     var correctAnswerText = currentQuestion.options[correctAnswerIndex];
     if (correctAnswerText.localeCompare(selectedAnswerText) === 0){

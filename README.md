@@ -1,5 +1,13 @@
 # Basic Quiz Application
-This is an basic quiz application about Sweden and built on HTML, CSS and JavaScript. 
+This is an basic quiz test application about Sweden and built on HTML, CSS and JavaScript. There are 10 functions in this file.
+
+Function with the largest signature take 2 arguments, while the median is 0.
+
+Largest function has 11 statements in it, while the median is 5.5.
+
+The most complex function has a cyclomatic complexity value of 3 while the median is 1.
+
+There are all screen size tested and screenshots under below.
 
 ![screenshot with all device](images/Screenshot1.png)
 
