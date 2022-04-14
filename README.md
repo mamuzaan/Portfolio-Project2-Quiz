@@ -52,9 +52,9 @@ Click on 'Pages' in the menu on the left.
 From the source section drop-down menu, select the Main Branch.
 Press the 'Save' button.
 Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-The live link is: 
+(github) The live link is: https://github.com/mamuzaan/Portfolio-Project2-Quiz
 
-Gitpod live link is: 
+Gitpod live link is: https://mamuzaan.github.io/Portfolio-Project2-Quiz/
 
 ## Credits
 - Content was taken from google search
