@@ -1,4 +1,4 @@
-let quiz = [
+var quiz = [
     {
         question: "what is the capital of Sweden?",
         options: ["Uppsala", "Göteborg", "Stockholm", "Malmö"],
@@ -51,21 +51,24 @@ let quiz = [
     }
 ];
 
-let shuffleQuestions = [];
-let questionNumber = 1;
-let questionIndex = 0;
-let score = 0;
-let incorrectScore = 0;
-let userName = "";
-let usernameButton = document.getElementById("username-button");
-let startButton = document.getElementById("start-button");
-let mainBox = document.getElementById("main-box");
-let userNameBox = document.getElementById("user-name-box");
-let questionHolder = document.getElementById("question-box");
+var shuffleQuestions = [];
+var questionNumber = 1;
+var questionIndex = 0;
+var score = 0;
+var incorrectScore = 0;
+var userName = "";
+var usernameButton = document.getElementById("username-button");
+var startButton = document.getElementById("start-button");
+var mainBox = document.getElementById("main-box");
+var userNameBox = document.getElementById("user-name-box");
+var questionHolder = document.getElementById("question-box");
 usernameButton.addEventListener('click', getUserName);
 startButton.addEventListener('click', startQuiz);
 document.querySelectorAll('.answer')
-      .forEach(button => button.addEventListener('click', validateAnswer));
+.forEach(function(button){
+    button.addEventListener('click', validateAnswer);
+});
+
 document.getElementById('try-again').addEventListener('click', resetQuiz);
 
 // Quiz function here
@@ -76,8 +79,8 @@ function shuffleQuestionsArray(array) {
       // Remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+    //  [array[currentIndex], array[randomIndex]] = [
+      //  array[randomIndex], array[currentIndex]];
     }
   
     return array;
@@ -121,12 +124,12 @@ function resetQuiz(){
 
 //Display question function
 function displayQuestion(question, number){
-    document.getElementById('question-content').innerText = question['question'];
+    document.getElementById('question-content').innerText = question.question;
     document.getElementById('question-num').innerText = number;
-    document.getElementById('answer1').innerText = question['options'][0];
-    document.getElementById('answer2').innerText = question['options'][1];
-    document.getElementById('answer3').innerText = question['options'][2];
-    document.getElementById('answer4').innerText = question['options'][3];
+    document.getElementById('answer1').innerText = question.options[0];
+    document.getElementById('answer2').innerText = question.options[1];
+    document.getElementById('answer3').innerText = question.options[2];
+    document.getElementById('answer4').innerText = question.options[3];
 }
 
 // function for get next question and display correct and incorrect score
@@ -152,10 +155,10 @@ function displayIncorrectScore(){
 // Function for answer validation
 function validateAnswer(event){
     console.log('I clicked ', event.target.innerText);
-    const selectedAnswerText = event.target.innerText;
-    const currentQuestion = shuffleQuestions[questionIndex];
-    const correctAnswerIndex = currentQuestion.answer;
-    const correctAnswerText = currentQuestion.options[correctAnswerIndex];
+    var selectedAnswerText = event.target.innerText;
+    var currentQuestion = shuffleQuestions[questionIndex];
+    var correctAnswerIndex = currentQuestion.answer;
+    var correctAnswerText = currentQuestion.options[correctAnswerIndex];
     console.log(selectedAnswerText, correctAnswerText);
     if (correctAnswerText.localeCompare(selectedAnswerText) === 0){
         score = score + 1;
@@ -177,20 +180,21 @@ function finishQuiz (){
     document.getElementById('total-q').innerText = 10;
     document.getElementById('total-right').innerText = score;
     document.getElementById('total-fail').innerText = incorrectScore;
+    var textToHighlight;
 
     if (score >= 8) {
         console.log('8-10');
-        var textToHighlight = '<span style="color:green"> Well done! ' + userName + ', you have good general knowledge.</span>';
+        textToHighlight = '<span style="color:green"> Well done! ' + userName + ', you have good general knowledge.</span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
     else if (score >= 6) {
         console.log('5-7');
-        var textToHighlight = '<span style="color:orange"> Average not bad ' + userName + ', but you have to learn more. </span>';
+        textToHighlight = '<span style="color:black"> Average not bad ' + userName + ', but you have to learn more. </span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
     else {
         console.log('0-4');
-        var textToHighlight = '<span style="color:red"> Sorry ' + userName + ', go to wikipedia and practise and try again. </span>';
+        textToHighlight = '<span style="color:red"> Sorry ' + userName + ', go to wikipedia and practise and try again. </span>';
         document.getElementById("com1").innerHTML = textToHighlight;
     }
 }
