@@ -51,7 +51,6 @@ var quiz = [
     }
 ];
 
-var shuffleQuestions = [];
 var questionNumber = 1;
 var questionIndex = 0;
 var score = 0;
@@ -62,6 +61,7 @@ var startButton = document.getElementById("start-button");
 var mainBox = document.getElementById("main-box");
 var userNameBox = document.getElementById("user-name-box");
 var questionHolder = document.getElementById("question-box");
+var userNameValidation = document.getElementById('user-name-validation-msg')
 usernameButton.addEventListener('click', getUserName);
 startButton.addEventListener('click', startQuiz);
 document.querySelectorAll('.answer')
@@ -70,21 +70,6 @@ document.querySelectorAll('.answer')
 });
 
 document.getElementById('try-again').addEventListener('click', resetQuiz);
-
-// Quiz function here
-
-function shuffleQuestionsArray(array) {
-    var currentIndex = array.length,  randomIndex;
-    while (0 !== currentIndex) {
-      // Remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-    //  [array[currentIndex], array[randomIndex]] = [
-      //  array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
-}
 
 //take user name
 function getUserName() {
@@ -96,20 +81,18 @@ function getUserName() {
 //quiz function start here
 function startQuiz(){
     userName = document.getElementById('user-name').value;
-    console.log("userName: " + userName);
     if(userName.length >= 1) {
         mainBox.classList.add('hide-content');
         userNameBox.classList.add('hide-content');
         document.getElementById('question-box').classList.remove('hide-content');
-        console.log('userName ' + userName);
-        shuffleQuestions = shuffleQuestionsArray(quiz);
         displayQuestion(shuffleQuestions[questionIndex], questionNumber);
+    } else {
+        userNameValidation.innerHTML = '<span style="color:red"> Please enter user name.</span>'
     }
 }
 
 //quiz function reset
 function resetQuiz(){
-    shuffleQuestions = [];
     questionNumber = 1;
     questionIndex = 0;
     score = 0;
@@ -117,6 +100,7 @@ function resetQuiz(){
     incorrectScore = 0;
     document.getElementById('result-contain').classList.add('hide-content');
     document.getElementById('user-name').value = "";
+    userNameValidation.innerHTML = "";
     displayScore();
     displayIncorrectScore();
     mainBox.classList.remove('hide-content');
@@ -137,7 +121,7 @@ function getNextQuestion(){
     if (questionNumber < 10){
         questionNumber = questionNumber + 1;
         questionIndex = questionIndex + 1;  
-        displayQuestion(shuffleQuestions[questionIndex], questionNumber);
+        displayQuestion(quiz[questionIndex], questionNumber);
     }
     else {
         finishQuiz();
@@ -154,19 +138,15 @@ function displayIncorrectScore(){
 
 // Function for answer validation
 function validateAnswer(event){
-    console.log('I clicked ', event.target.innerText);
     var selectedAnswerText = event.target.innerText;
     var currentQuestion = shuffleQuestions[questionIndex];
     var correctAnswerIndex = currentQuestion.answer;
     var correctAnswerText = currentQuestion.options[correctAnswerIndex];
-    console.log(selectedAnswerText, correctAnswerText);
     if (correctAnswerText.localeCompare(selectedAnswerText) === 0){
         score = score + 1;
-        console.log('Correct Answer');
         displayScore();
     }
     else{
-        console.log('Incorrect Answer');
         incorrectScore = incorrectScore + 1;
         displayIncorrectScore();
     }
@@ -182,19 +162,15 @@ function finishQuiz (){
     document.getElementById('total-fail').innerText = incorrectScore;
     var textToHighlight;
 
+    // scoring system is (8-10 is welldone), (5-7 is avarage) and (0-4 is below average)
     if (score >= 8) {
-        console.log('8-10');
         textToHighlight = '<span style="color:green"> Well done! ' + userName + ', you have good general knowledge.</span>';
-        document.getElementById("com1").innerHTML = textToHighlight;
     }
-    else if (score >= 6) {
-        console.log('5-7');
+    else if (score >= 5) {
         textToHighlight = '<span style="color:black"> Average not bad ' + userName + ', but you have to learn more. </span>';
-        document.getElementById("com1").innerHTML = textToHighlight;
     }
     else {
-        console.log('0-4');
         textToHighlight = '<span style="color:red"> Sorry ' + userName + ', go to wikipedia and practise and try again. </span>';
-        document.getElementById("com1").innerHTML = textToHighlight;
     }
+    document.getElementById("com1").innerHTML = textToHighlight;
 }

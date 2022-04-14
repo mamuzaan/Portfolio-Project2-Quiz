@@ -202,6 +202,10 @@ h1{
     padding: 6px;
 }
 
+.margin-top-big {
+    margin-top: 30px;
+}
+
 /* Apply style to @media screen for mobile device */
 @media screen and (max-width: 480px){
     #main-box{
